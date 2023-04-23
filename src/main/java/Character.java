@@ -97,4 +97,12 @@ public class Character {
                 ", charisma=" + charisma +
                 '}';
     }
+
+    public int calculateAC(Modifier modifier) {
+        int dexterityModifier = modifier.calculate(this.dexterity);
+        int armorClass = 10 + dexterityModifier;
+        // Add Armor bonus, Shield bonus, and other modifiers here, if necessary
+        return armorClass;
+    }
+
 }

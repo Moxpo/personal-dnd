@@ -36,6 +36,10 @@ public class Main {
         System.out.println("Your charisma mod is: " + modifier.calculate(player.getWisdom()));
 
 
+        int playerAC = player.calculateAC(modifier);
+        System.out.println("Your character's Armor Class: " + playerAC);
+
+
         }
 
     }
