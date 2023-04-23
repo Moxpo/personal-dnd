@@ -8,7 +8,8 @@ public class Character {
     private int wisdom;
     private int charisma;
 
-    public Character(String name, int level, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+    public Character(String name, int level, int strength, int dexterity, int constitution, int intelligence,
+                     int wisdom, int charisma) {
         this.name = name;
         this.level = level;
         this.strength = strength;
@@ -81,5 +82,19 @@ public class Character {
 
     public void setCharisma(int charisma) {
         this.charisma = charisma;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                ", strength=" + strength +
+                ", dexterity=" + dexterity +
+                ", constitution=" + constitution +
+                ", intelligence=" + intelligence +
+                ", wisdom=" + wisdom +
+                ", charisma=" + charisma +
+                '}';
     }
 }
