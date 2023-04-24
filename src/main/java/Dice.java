@@ -9,6 +9,12 @@ public class Dice {
         random = new Random();
     }
 
+    public Dice(Random random){
+        this.random = random;
+    }
+
+
+
     public int roll(String diceSplit){
         String[] parts = diceSplit.split("d");
         int numDice = Integer.parseInt(parts[0]);

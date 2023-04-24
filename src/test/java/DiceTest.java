@@ -22,6 +22,7 @@ class DiceTest {
     void Before(){
         mockedRandom = mock(Random.class);
         mockedDice = mock(Dice.class);
+        dice = new Dice(mockedRandom);
     }
 
 
