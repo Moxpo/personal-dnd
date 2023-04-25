@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Character {
     private String name;
     private int level;
@@ -18,6 +22,18 @@ public class Character {
         this.intelligence = intelligence;
         this.wisdom = wisdom;
         this.charisma = charisma;
+        saveCharacter();
+    }
+
+    private void saveCharacter() {
+        String saveGameFile = "data.csv";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(saveGameFile, true))) {
+            String dataLine = String.format("%s,%d,%d,%d,%d,%d,%d,%d\n", name, level, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            bw.write(dataLine);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getName() {
@@ -104,5 +120,7 @@ public class Character {
         // Add Armor bonus, Shield bonus, and other modifiers here, if necessary
         return armorClass;
     }
+
+
 
 }

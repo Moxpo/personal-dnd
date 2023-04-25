@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,5 +37,7 @@ public class NewCharacter {
 
         int playerAC = player.calculateAC(modifier);
         System.out.println("Your character's Armor Class: " + playerAC);
+
+
     }
 }
