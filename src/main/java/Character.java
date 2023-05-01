@@ -102,16 +102,16 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character{" +
-                "name='" + name + '\'' +
-                ", level=" + level +
-                ", strength=" + strength +
-                ", dexterity=" + dexterity +
-                ", constitution=" + constitution +
-                ", intelligence=" + intelligence +
-                ", wisdom=" + wisdom +
-                ", charisma=" + charisma +
-                '}';
+        return "Character " +
+                "Name :" + name +
+                ", Level :" + level +
+                ", Strength :" + strength +
+                ", Dexterity :" + dexterity +
+                ", Constitution :" + constitution +
+                ", Intelligence :" + intelligence +
+                ", Wisdom :" + wisdom +
+                ", Charisma :" + charisma
+                ;
     }
 
     public int calculateAC(Modifier modifier) {

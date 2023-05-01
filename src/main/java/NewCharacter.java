@@ -27,12 +27,12 @@ public class NewCharacter {
         System.out.println("Your character: " + player);
 
         Modifier modifier = new Modifier();
-        System.out.println("Your strength mod is: " + modifier.calculate(player.getStrength()));
-        System.out.println("Your dexterity mod is: " + modifier.calculate(player.getDexterity()));
-        System.out.println("Your constitution mod is: " + modifier.calculate(player.getConstitution()));
-        System.out.println("Your intelligence mod is: " + modifier.calculate(player.getIntelligence()));
-        System.out.println("Your wisdom mod is: " + modifier.calculate(player.getWisdom()));
-        System.out.println("Your charisma mod is: " + modifier.calculate(player.getWisdom()));
+        System.out.println("Your Strength mod is : " + modifier.calculate(player.getStrength()));
+        System.out.println("Your Dexterity mod is : " + modifier.calculate(player.getDexterity()));
+        System.out.println("Your Constitution mod is : " + modifier.calculate(player.getConstitution()));
+        System.out.println("Your Intelligence mod is : " + modifier.calculate(player.getIntelligence()));
+        System.out.println("Your Wisdom mod is : " + modifier.calculate(player.getWisdom()));
+        System.out.println("Your Charisma mod is : " + modifier.calculate(player.getWisdom()));
 
 
         int playerAC = player.calculateAC(modifier);
