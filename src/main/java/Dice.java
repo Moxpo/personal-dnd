@@ -28,24 +28,31 @@ public class Dice {
     }
 
     public int rollAndKeepHighest(String diceSplit, int numToKeep){
-        String[] parts = diceSplit.split("d");
-        int numDice = Integer.parseInt(parts[0]);
-        int numSides = Integer.parseInt(parts[1]);
-        ArrayList<Integer> rolls = new ArrayList<>();
 
-        for (int i = 0; i < numDice; i++){
-            rolls.add(random.nextInt(numSides) + 1);
+        if (diceSplit.isEmpty()) {
+            return 0;
         }
+            else {
 
-        Collections.sort(rolls, Collections.reverseOrder());
+                String[] parts = diceSplit.split("d");
+                int numDice = Integer.parseInt(parts[0]);
+                int numSides = Integer.parseInt(parts[1]);
+                ArrayList<Integer> rolls = new ArrayList<>();
 
-        int result = 0;
-        for (int i = 0; i < numToKeep; i++){
-            result += rolls.get(i);
+                for (int i = 0; i < numDice; i++) {
+                    rolls.add(random.nextInt(numSides) + 1);
+                }
+
+                Collections.sort(rolls, Collections.reverseOrder());
+
+                int result = 0;
+                for (int i = 0; i < numToKeep; i++) {
+                    result += rolls.get(i);
+                }
+
+                return result;
+
+            }
         }
-
-        return result;
-
-    }
 
 }

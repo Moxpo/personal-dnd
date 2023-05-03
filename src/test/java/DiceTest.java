@@ -1,44 +1,37 @@
-import org.junit.jupiter.api.BeforeEach;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-
 import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-/*
+
 class DiceTest {
 
-    private Dice dice;
+    private static Dice dice;
 
-    @Mock
-    private Dice mockedDice;
-
-    @Mock
-    private Random mockedRandom;
-
-    @BeforeEach
-    void setup(){
-        mockedRandom = mock(Random.class);
-        mockedDice = mock(Dice.class);
-        dice = new Dice(mockedRandom);
+    @BeforeAll
+    static void setup() {
+        dice = new Dice();
     }
 
     @Test
-    void roll1d20() {
-        when(mockedRandom.nextInt(20)).thenReturn(16);
-        int result = dice.roll("1d20");
-        assertEquals(17, result, "Correct");
+    void testDiceRoll() {
+        int rollResult = dice.roll("1d6");
+        assertTrue(rollResult >= 1 && rollResult <= 6);
     }
-
-
 
     @Test
-    void testRollAndKeepHighestWithFakeRandom(){
-        Dice diceFakeRandom = new Dice(new fakeRandom());
-
+    void testDiceRollAndKeepHighestBoundary() {
+        Dice diceRealRandom = new Dice(new Random());
+        int rollResult = diceRealRandom.rollAndKeepHighest("4d6", 3);
+        assertTrue(rollResult >= 3 && rollResult <= 18);
     }
+
+    @Test
+    public void testDiceRollAndKeepHighestInvalidInput() {
+        int rollResult = dice.rollAndKeepHighest("", 3);
+        int expectedOutput = 0;
+        assertEquals(expectedOutput, rollResult);
+    }
+
 
 }
-*/
