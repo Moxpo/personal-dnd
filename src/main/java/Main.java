@@ -17,11 +17,19 @@ public class Main {
             switch(userChoice) {
                 case 1:
                     validInput = true;
-                    NewCharacter.createCharacter();
+                    System.out.println("Lets create a character");
+                    scanner.nextLine();
+                    System.out.println("What is your name?:");
+                    String userName = scanner.nextLine();
+                    NewCharacter.createCharacter(userName, null);
                     break;
                 case 2:
                     validInput = true;
-                    System.out.println("two");
+                    System.out.println("Lets load your character");
+                    scanner.nextLine();
+                    System.out.println("What is your name?:");
+                    String loadName = scanner.nextLine();
+                    NewCharacter.createCharacter(loadName, "data.csv");
                     break;
                 default:
                     System.out.println("Invalid input, please select 1 or 2");

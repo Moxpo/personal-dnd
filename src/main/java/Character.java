@@ -4,7 +4,6 @@ import java.io.IOException;
 
 public class Character {
     private String name;
-    private int level;
     private int strength;
     private int dexterity;
     private int constitution;
@@ -12,23 +11,23 @@ public class Character {
     private int wisdom;
     private int charisma;
 
-    public Character(String name, int level, int strength, int dexterity, int constitution, int intelligence,
+    public Character(String name, int strength, int dexterity, int constitution, int intelligence,
                      int wisdom, int charisma) {
         this.name = name;
-        this.level = level;
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;
         this.intelligence = intelligence;
         this.wisdom = wisdom;
         this.charisma = charisma;
-        saveCharacter();
     }
 
-    private void saveCharacter() {
+
+
+    public void saveCharacter() {
         String saveGameFile = "data.csv";
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(saveGameFile, true))) {
-            String dataLine = String.format("%s,%d,%d,%d,%d,%d,%d,%d\n", name, level, strength, dexterity, constitution, intelligence, wisdom, charisma);
+            String dataLine = String.format("%s,%d,%d,%d,%d,%d,%d\n", name, strength, dexterity, constitution, intelligence, wisdom, charisma);
             bw.write(dataLine);
 
         } catch (IOException e) {
@@ -44,13 +43,6 @@ public class Character {
         this.name = name;
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public int getStrength() {
         return strength;
@@ -104,7 +96,6 @@ public class Character {
     public String toString() {
         return "Character " +
                 "Name :" + name +
-                ", Level :" + level +
                 ", Strength :" + strength +
                 ", Dexterity :" + dexterity +
                 ", Constitution :" + constitution +
