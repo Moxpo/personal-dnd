@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
-public class Dice {
+public class Dice implements DiceInterface {
     private final Random random;
     public Dice() {
         random = new Random();
@@ -14,8 +13,8 @@ public class Dice {
     }
 
 
-
-    public int roll(String diceSplit){
+    @Override
+    public int roll(String diceSplit) {
         String[] parts = diceSplit.split("d");
         int numDice = Integer.parseInt(parts[0]);
         int numSides = Integer.parseInt(parts[1]);
@@ -27,6 +26,9 @@ public class Dice {
         return result;
     }
 
+
+
+    @Override
     public int rollAndKeepHighest(String diceSplit, int numToKeep){
 
         if (diceSplit.isEmpty()) {
@@ -54,5 +56,6 @@ public class Dice {
 
             }
         }
+
 
 }

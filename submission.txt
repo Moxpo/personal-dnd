@@ -1,0 +1,39 @@
+1.	Link to class with the data load (load file, external call, database call) functions to be doubled
+
+	The NewCharacter class is responsible for creating new characters and loading existing ones. It interacts with the data.csv file.
+	https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/main/java/NewCharacter.java
+    	NewCharacter.createCharacter(String userName, String csvPath)
+	
+
+2.	List the functions that can be double, you don't need to a stub for all
+
+    https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/main/java/Character.java
+        Character.saveCharacter() [Saving character data to the CSV file]
+
+    https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/main/java/NewCharacter.java
+        NewCharacter.createCharacter(String userName, String csvPath) [Creating a new character or loading an existing one from the CSV file]
+	
+3.	Link to class with unit tests
+    Dice()              - https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/main/java/Dice.java
+        DiceTest        - https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/DiceTest.java
+    Modifier()          - https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/main/java/Modifier.java
+        ModifierTest    - https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/ModifierTest.java
+
+4.	List names of unit tests methods for stub, mock and fake
+
+	Stub:
+        CharacterStub.testCalculateStrengthWithStubModifier()
+        https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/CharacterStub.java
+
+    Mock:
+        CharacterMock.testCalculateAC()
+        CharacterMock.testCharacterAttributes()
+        https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/CharacterMock.java
+
+        DiceMock.testDiceRollAndKeepHighestWithMockedRandom()
+        DiceMock.roll1d20()
+        https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/DiceMock.java
+
+    Fake:
+        testCreateCharacterFromFile()  **not working**
+        https://stgit.dcs.gla.ac.uk/2841168f/tsi-gregor-fiddes/-/blob/main/src/test/java/NewCharacterFake.java

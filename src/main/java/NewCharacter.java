@@ -1,11 +1,9 @@
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class NewCharacter {
 
-    public static void createCharacter(String userName, String csvPath) {
+    public static Character createCharacter(String userName, String csvPath) {
 
         if (csvPath == null || csvPath.isEmpty()) {
             System.out.println("Welcome " + userName + " Let me generate your stats:");
@@ -62,7 +60,7 @@ public class NewCharacter {
 
                         int playerAC = player.calculateAC(modifier);
                         System.out.println("Your character's Armor Class: " + playerAC);
-                        return;
+                        return player;
 
                     }
 
@@ -77,5 +75,6 @@ public class NewCharacter {
 
             }
         }
+        return null;
     }
 }
